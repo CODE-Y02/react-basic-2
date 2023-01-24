@@ -13,12 +13,23 @@ const Login = (props) => {
 
   const [enteredCollege, setEnteredCollege] = useState("");
 
+  // console.log("I am rendering ");
+
   useEffect(() => {
-    setFormIsValid(
-      enteredEmail.includes("@") &&
-        enteredPassword.trim().length > 6 &&
-        enteredCollege.trim().length
-    );
+    // console.log("jdsjgdjg");
+    const timerIdentifier = setTimeout(() => {
+      // console.log("check validity");
+      setFormIsValid(
+        enteredEmail.includes("@") &&
+          enteredPassword.trim().length > 6 &&
+          enteredCollege.trim().length
+      );
+    }, 1000);
+
+    return () => {
+      // console.log("clean up");
+      clearTimeout(timerIdentifier);
+    };
   }, [enteredEmail, enteredPassword, enteredCollege]);
 
   const emailChangeHandler = (event) => {
