@@ -83,3 +83,5 @@
             context.isLoggedIn
 
 - because less code
+
+> NOTE when we set initial context state in provider ve can also set function
