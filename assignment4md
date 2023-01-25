@@ -34,3 +34,52 @@
 - We can use global state management to solve this
 - React has Context ApI in it
 - with it we can pass state from and to any Component without having prop chain
+
+---
+
+---
+
+### Please write down the steps involved to add the Login context
+
+- create context file ( src/store/auth-context.js)
+- use reacts createcontext that takes initial or default value of state
+
+        const AuthContext = createContext({
+                                isLoggedIn: false,
+                            });
+
+- we will export this AuthContext
+- wrap component where we want to have this auth state acccess
+
+        <AuthContext.Provider>
+                // component which needs access to state in our case its App
+        < / AuthContext.Provider>
+
+---
+
+### How do we consume the context API
+
+- we can use it using consumer
+- wrap component were we need to use it with AuthContext.consumer
+- inside it we will have fuction that has context and return jsx
+
+---
+
+### What do you think about context API. When would you use it
+
+- whenever we need to pass state between adjecent components
+
+---
+
+### What are the steps to convert to context api hook? Why do we need this steps any idea
+
+- instead of using AuthContext.consumer we can use useContext hook
+- it takes context obj and returns context value
+- we can assign this value to variable and use it
+
+             const context = useContext(AuthContext);
+
+            we can use it like
+            context.isLoggedIn
+
+- because less code
