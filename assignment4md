@@ -1,0 +1,36 @@
+# Context API
+
+### What is the problem we are trying to solve here?
+
+- whenever we need to pass data between adjecent component , data must flow through common parent between them
+- In react data is only transfered between parent and clild (using states)
+- Now when our application is large there may be some components in which we are passing props but not using them
+- those component just acts like data carrear for those props (un utilized)
+- This leads to pronlem of prop drilling and increase reduncay in code
+
+---
+
+### What is prop chain and what is the problem that it has?
+
+- lets say we have component structure like
+
+        ABC(parent) -> A(clild) -> a1 (grandclild) ;
+        ABC(parent) -> B(clild) -> b1 (grandclild) ;
+        ABC(parent) -> C(clild) -> c1 (grandclild) ;
+
+- now we want to pass data from c1 to a1 it will go like this
+
+        c1 -> C ->ACB -> A -> a1
+
+- now here C , ABC and A are not utilizing data (especillly C and A ) they just acts like bridge
+- THIS is Propchain and in huge application this is problem
+- it exposes data to some component where its not needed
+- It leads to code reduncy
+
+---
+
+### How do we plan to solve it?
+
+- We can use global state management to solve this
+- React has Context ApI in it
+- with it we can pass state from and to any Component without having prop chain
