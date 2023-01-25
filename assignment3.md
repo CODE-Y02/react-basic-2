@@ -46,3 +46,25 @@
                 })
 
 - when ever the action is dispach reducerFunction will run and will return new updated state based on action
+
+---
+
+---
+
+---
+
+### When would you use useState and when would you use useReducer. Its important to know this. Reducers are favourite interview question.
+
+> use state
+
+- good for independent state management
+- if states are easy and limited to few kind of updates
+- if state does not have multiple related states to it
+- if we dont have state in complex form like object
+
+> Use Reducer
+
+- more powefull state management
+- we can seprate reducer logic from component logic
+- it is used if we have complex states
+- if we have related peices of states or data
