@@ -26,9 +26,13 @@
 - many time its possible thT REDUCER LOGIC IS very huge
 - so having outside component make sure to clean code structure
 
+---
+
 3 What does the emailReducer do. Please explain
 
 - its responsible for setting state based on action and returning updated state
+
+---
 
 4 How does dispatch actions work.
 
